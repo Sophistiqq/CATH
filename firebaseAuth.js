@@ -1,5 +1,5 @@
 // To check whether the admin is logged in
-
+// add this script if you want the page to be accessible only if the admin is logged in
 firebase.initializeApp(firebaseConfig);
 try {
 	firebase.auth().onAuthStateChanged(function(user) {

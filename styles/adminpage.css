@@ -1,0 +1,7 @@
+.admin-panels {
+	display: grid;
+	grid-template-columns: 30% 1fr;
+}
+.delete-post-form {
+	display:none;
+}
