@@ -1,16 +1,6 @@
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-firebase.auth().onAuthStateChanged(function(user) {
-	if (user) {
-		// User is signed in. Show the admin page.
-	} else {
-		// No user is signed in. Redirect to the login page.
-		// if (window.location.pathname !== '/loginpage.html') {
-		// 	window.location.replace("loginpage.html");
-		// }
-	}
-});
 
 const form = document.querySelector(".form");
 
