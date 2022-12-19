@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Admin Page</title>
+</head>
+
+<body>
+	<form id="logout-form">
+		<button type="submit">Logout</button>
+	</form>
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+<script src="firebaseConfig.js"></script>
+<script>
+firebase.initializeApp(firebaseConfig);
+	try {
+		firebase.auth().onAuthStateChanged(function(user) {
+			if (user) {
+				// User is signed in. Show the admin page.
+				
+			} else {
+				// No user is signed in. Redirect to the login page.
+				window.location.replace("loginpage.html");
+			}
+		});
+	} catch (error) {
+		console.error(error);
+	}
+	
+	
+	// Get the logout form
+	const logoutForm = document.querySelector('#logout-form');
+	
+	// Add a submit event listener to the form
+	logoutForm.addEventListener('submit', e => {
+		// Prevent the default form submission behavior
+		e.preventDefault();
+	
+		// Log the user out using Firebase's signOut method
+		firebase.auth().signOut();
+	});
+</script>
+
+</html>

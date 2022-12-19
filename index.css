@@ -1,0 +1,35 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.5rem;
+	padding-right: 1.5em;
+}
+.nav a {
+	text-decoration: none;
+	color: inherit;
+}
+.nav a:hover {
+	text-decoration: underline;
+}
+#home {
+	display: grid;
+	grid-template-columns: 1fr 70%;
+	padding: 5%;
+}
+.left-panel {
+	border: 1px solid hotpink;
+}
+.announcement-board {
+	border: 1px solid lime;
+}
