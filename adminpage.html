@@ -9,6 +9,7 @@
 	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
 	<script src="firebaseConfig.js"></script>
 	<script src="firebaseAuth.js"></script>
+	<script src="adminpage.js" defer></script>
 	<title>Admin Page</title>
 </head>
 
@@ -18,18 +19,6 @@
 		<button type="submit">Logout</button>
 	</form>
 </body>
-<script>
-	// Get the logout form
-	const logoutForm = document.querySelector('#logout-form');
-	
-	// Add a submit event listener to the form
-	logoutForm.addEventListener('submit', e => {
-		// Prevent the default form submission behavior
-		e.preventDefault();
-	
-		// Log the user out using Firebase's signOut method
-		firebase.auth().signOut();
-	});
-</script>
+
 
 </html>
