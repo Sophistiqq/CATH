@@ -1,15 +1,15 @@
-// To check whether the admin is logged in
-// add this script if you want the page to be accessible only if the admin is logged in
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-try {
-	firebase.auth().onAuthStateChanged(function(user) {
-		if (user) {
-			// User is signed in. Show the page page.
-		} else {
-			// No user is signed in. Redirect to the login page.
-			window.location.replace("loginpage.html");
-		}
-	});
-} catch (error) {
-	console.error(error);
-}
+
+// Get the auth object
+const auth = firebase.auth();
+
+// Add a listener to check the user's login status
+auth.onAuthStateChanged(user => {
+  if (user) {
+    // User is logged in, allow access to adminpage.html
+  } else {
+    // User is not logged in, redirect to loginpage.html
+    window.location.replace("loginpage.html");
+  }
+});
